@@ -1,32 +1,29 @@
-// C# code for Josephus Problem 
+
 using System; 
   
-class GFG { 
+class Soldiers { 
       
-    static int josephus(int n, int k) 
+    static int j(int n, int k) 
     { 
         if (n == 1) 
             return 1; 
         else
-            /* The position returned  
-            by josephus(n - 1, k) is 
-            adjusted because the 
-            recursive call josephus(n 
-            - 1, k) considers the  
-            original position k%n + 1 
-            as position 1 */
-            return (josephus(n - 1, k) 
+            return (j(n - 1, k) 
                        + k-1) % n + 1; 
     } 
-      
-    // Driver Program to test above 
-    // function 
-    public static void Main() 
+          int S=j(n,k);
+    
+    // For Checking Output
+     
+   public static void Main() 
     { 
-        int n = 14; 
-        int k = 2; 
-        Console.WriteLine("The chosen "
-        + "place is " + josephus(n, k)); 
+        Console.WriteLine("Input the total number of soldiers");
+        n=Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("How many soldiers to be skipped before shooting?");
+        k=Convert.ToInt32(Console.ReadLine());
+  
+        Console.WriteLine("The alive soldier is {0}", S); 
     } 
 } 
   
